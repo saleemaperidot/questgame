@@ -1,0 +1,16 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "questforge",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    }
+  ],
+  "generator": "pub",
+  "generatorVersion": "3.8.0",
+  "flutterRoot": "file:///C:/Users/SALEEMA%20N%20P/Documents/flutter_windows_3.3.1-stable/flutter",
+  "flutterVersion": "3.32.0",
+  "pubCache": "file:///C:/Users/SALEEMA%20N%20P/AppData/Local/Pub/Cache"
+}

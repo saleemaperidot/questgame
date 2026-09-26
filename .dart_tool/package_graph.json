@@ -1,0 +1,14 @@
+{
+  "roots": [
+    "questforge"
+  ],
+  "packages": [
+    {
+      "name": "questforge",
+      "version": "0.1.0",
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "configVersion": 1
+}
