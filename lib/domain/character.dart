@@ -46,11 +46,11 @@ class Character {
 
   int attackPower;
 
-  Character(
-    this.name,
-    int health,
-    this.attackPower,
-  )   : _health = health,
+  Character({
+    required this.name,
+    required int health,
+    required this.attackPower,
+  })  : _health = health,
         _maxHealth = health;
 
   // Read-only access to health

@@ -1,43 +1,26 @@
-
-
-import '../lib/domain/character.dart';
+import 'package:questforge/domain/mage.dart';
+import 'package:questforge/domain/rogue.dart';
+import 'package:questforge/domain/warrior.dart';
 
 void main() {
-  print("--- Original demo: Aria vs Goblin ---");
-  var hero = Character("Aria", 100, 15);
-  var goblin = Character("Goblin", 30, 5);
+  Warrior warrior = Warrior("Bram");
+  Mage mage = Mage("Sylla");
+  Rogue rogue = Rogue("Shadow");
 
-  print(hero.describe());
-  print(goblin.describe());
+  print(warrior.describe());
+  print(mage.describe());
+  print(rogue.describe());
 
-  hero.attack(goblin);
-  print(goblin.describe());
+  print("");
 
-  hero.heal(10);
+  warrior.attack(mage);
 
-  print("\n--- Checkpoint: 3-round exchange, Knight vs Orc ---");
-  var knight = Character("Knight", 50, 8);
-  var orc = Character("Orc", 45, 6);
+  mage.specialAbility(warrior);
 
-  print(knight.describe());
-  print(orc.describe());
+  rogue.specialAbility(warrior);
 
-  for (var roundNum = 1; roundNum < 10; roundNum++) {
-    print("\nRound $roundNum:");
-   knight.attack(orc);
+  print("");
 
-if (!orc.isAlive) {
-  print("${orc.name} is defeated!");
-  break;
-}
-
-orc.attack(knight);
-
-if (!knight.isAlive) {
-  print("${knight.name} is defeated!");
-  break;
-}
-    print(knight.describe());
-    print(orc.describe());
-  }
+  print("Bram HP: ${warrior.health}");
+  print("Sylla HP: ${mage.health}");
 }
