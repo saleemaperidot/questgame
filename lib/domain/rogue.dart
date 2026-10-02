@@ -6,7 +6,7 @@ class Rogue extends Character {
           health: 90,
           attackPower: 14,
         );
-
+@override
   void specialAbility(Character target) {
     int crit = attackPower * 2;
 

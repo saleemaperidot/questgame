@@ -8,7 +8,7 @@ class Mage extends Character {
           health: 80,
           attackPower: 10,
         );
-
+@override
   void specialAbility(Character target) {
     const int cost = 20;
 

@@ -7,7 +7,7 @@ class Warrior extends Character {
           health: 120,
           attackPower: 18,
         );
-
+@override
   void specialAbility(Character target) {
     int bonus = (attackPower * 1.5).toInt();
 

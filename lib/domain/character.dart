@@ -38,7 +38,7 @@
 
 import 'dart:math';
 
-class Character {
+abstract class Character {
   String name;
 
   int _health;
@@ -95,4 +95,6 @@ class Character {
   String describe() {
     return "$name has $health HP and $attackPower ATK";
   }
+    void specialAbility(Character target);
+   //void specialAbility(Character target);
 }

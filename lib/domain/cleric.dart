@@ -7,7 +7,7 @@ class Cleric extends Character {
           health: 100,
           attackPower: 8,
         );
-
+@override
   void specialAbility(Character ally) {
     const int healAmount = 25;
 
