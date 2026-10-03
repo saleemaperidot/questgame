@@ -38,6 +38,8 @@
 
 import 'dart:math';
 
+import 'package:questforge/domain/inventory.dart';
+
 abstract class Character {
   String name;
 
@@ -45,6 +47,8 @@ abstract class Character {
   final int _maxHealth;
 
   int attackPower;
+
+    final Inventory inventory = Inventory();
 
   Character({
     required this.name,
@@ -96,5 +100,12 @@ abstract class Character {
     return "$name has $health HP and $attackPower ATK";
   }
     void specialAbility(Character target);
+    void increaseAttack(int amount) {
+  if (amount < 0) {
+    throw ArgumentError("Attack increase cannot be negative");
+  }
+
+  attackPower += amount;
+}
    //void specialAbility(Character target);
 }

@@ -1,6 +1,7 @@
 import 'package:questforge/domain/battle.dart';
 import 'package:questforge/domain/character.dart';
 import 'package:questforge/domain/cleric.dart';
+import 'package:questforge/domain/items.dart';
 import 'package:questforge/domain/mage.dart';
 import 'package:questforge/domain/rogue.dart';
 import 'package:questforge/domain/warrior.dart';
@@ -27,19 +28,34 @@ void main() {
   // print("Bram HP: ${warrior.health}");
   // print("Sylla HP: ${mage.health}");
 
-   List<Character> party = [
-    Warrior("Bram"),
-    Mage("Sylla"),
-    Rogue("Kade"),
-    Cleric("Lina"),
-  ];
+  // List<Character> party = [
+  //   Warrior("Bram"),
+  //   Mage("Sylla"),
+  //   Rogue("Kade"),
+  //   Cleric("Lina"),
+  // ];
 
-  Warrior dummy = Warrior("Training Dummy");
+  // Warrior dummy = Warrior("Training Dummy");
 
-  for (Character member in party) {
-    runSpecialRound(member, dummy);
+  // for (Character member in party) {
+  //   runSpecialRound(member, dummy);
 
-    print("Dummy HP: ${dummy.health}");
-    print("");
-  }
+  //   print("Dummy HP: ${dummy.health}");
+  //   print("");
+  // }
+
+   Warrior warrior = Warrior("Bram");
+
+  warrior.inventory.add(
+    HealthPotion(),
+  );
+
+  warrior.inventory.add(
+    HealthPotion(healAmount: 30),
+  );
+
+  warrior.inventory.add(
+    Weapon("Fire Sword", 10),
+  );
+  
 }
