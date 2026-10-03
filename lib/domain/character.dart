@@ -63,14 +63,31 @@ abstract class Character {
   // Check whether character is alive
   bool get isAlive => _health > 0;
 
-  // Reduce health safely
-  void takeDamage(int amount) {
-    if (amount < 0) {
-      throw ArgumentError("Damage cannot be negative");
-    }
 
-    _health = max(0, _health - amount);
+  int _defense = 0;
+
+int get defense => _defense;
+
+void increaseDefense(int amount) {
+  if (amount < 0) {
+    throw ArgumentError("Defense increase cannot be negative");
   }
+
+  _defense += amount;
+}
+
+  // Reduce health safely
+
+
+  void takeDamage(int amount) {
+  if (amount < 0) {
+    throw ArgumentError("Damage cannot be negative");
+  }
+
+  int actualDamage = max(0, amount - _defense);
+
+  _health = max(0, _health - actualDamage);
+}
 
   // Increase health safely
   void heal(int amount) {

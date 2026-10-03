@@ -27,3 +27,17 @@ class Weapon implements Item {
     return '${character.name} equips $name (+$bonusAttack ATK)';
   }
 }
+
+class Armor implements Item {
+  final String name;
+  final int defenseBonus;
+
+  Armor(this.name, this.defenseBonus);
+
+  @override
+  String apply(Character character) {
+    character.increaseDefense(defenseBonus);
+
+    return '${character.name} equips $name (+$defenseBonus DEF)';
+  }
+}
