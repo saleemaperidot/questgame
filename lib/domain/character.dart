@@ -38,6 +38,7 @@
 
 import 'dart:math';
 
+import 'package:questforge/domain/exception.dart';
 import 'package:questforge/domain/inventory.dart';
 
 abstract class Character {
@@ -101,7 +102,10 @@ void increaseDefense(int amount) {
   // Attack another character
   void attack(Character target) {
     if (!isAlive) {
-      return;
+         throw DeadCharacterError(
+      "$name is dead and cannot act",
+    );
+
     }
     if (!target.isAlive) {
       return;

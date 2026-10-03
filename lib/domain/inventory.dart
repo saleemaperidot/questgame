@@ -1,3 +1,5 @@
+import 'package:questforge/domain/exception.dart';
+
 import 'character.dart';
 import 'item.dart';
 
@@ -9,10 +11,23 @@ class Inventory {
   }
 
   String use(int index, Character target) {
-    final item = _items.removeAt(index);
-
-    return item.apply(target);
+   if (_items.isEmpty) {
+    throw InventoryEmptyError(
+      "Inventory is empty",
+    );
   }
+
+  if (index < 0 || index >= _items.length) {
+    throw InventoryEmptyError(
+      "Invalid inventory index: $index",
+    );
+  }
+
+  final item = _items.removeAt(index);
+
+  return item.apply(target);
+  }
+  
 
   List<String> listItems() {
     return _items

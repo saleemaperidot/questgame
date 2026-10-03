@@ -1,4 +1,5 @@
 import 'package:questforge/domain/character.dart';
+import 'package:questforge/domain/exception.dart';
 class Mage extends Character {
   int mana = 50;
 
@@ -13,10 +14,10 @@ class Mage extends Character {
     const int cost = 20;
 
     if (mana < cost) {
-      print('$name does not have enough mana!');
-      return;
-    }
-
+    throw InsufficientManaError(
+      "$name needs $cost mana, has $mana",
+    );
+  }
     mana -= cost;
 
     int damage = attackPower * 3;
